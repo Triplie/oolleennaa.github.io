@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Генератор случайных чисел</title>
+  <script>
+    function generateNumbers() {
+      var count = parseInt(document.getElementById('countInput').value);
+      var numbersContainer = document.getElementById('numbersContainer');
+      numbersContainer.innerHTML = ''; // Очищаем контейнер перед генерацией новых чисел
+      
+      for (var i = 0; i < count; i++) {
+        var randomNumber = Math.floor(Math.random() * 100) + 1; // Генерируем случайное число от 1 до 100
+        var numberElement = document.createElement('p');
+        numberElement.textContent = randomNumber;
+        numbersContainer.appendChild(numberElement);
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1>Генератор случайных чисел</h1>
+  
+  <label for="countInput">Количество чисел:</label>
+  <input type="number" id="countInput" value="100">
+  <button onclick="generateNumbers()">Сгенерировать</button>
+  
+  <div id="numbersContainer"></div>
+</body>
+</html>
